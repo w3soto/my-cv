@@ -161,40 +161,43 @@
 
         > span {
             display: block;
-            &.fade-in.appear {
-                transform: translateX(0);
-            }
+
             &:nth-child(1) {
                 transform: translateX(-50%);
                 transition: all .4s ease .8s;
             }
+
             &:nth-child(2) {
                 transform: translateX(50%);
                 transition: all .4s ease 1.2s;
             }
-        }
-        em {
-            display: inline-block;
-            font-style: normal;
-            white-space: nowrap;
-            $color: $secondary;
 
-            transition: all .4s ease;
-            transform: scale(1);
-
-            animation: intro-detail-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
-
-            span {
+            em {
                 display: inline-block;
-                width: 0;
-                animation: intro-detail-brakets-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
-                transform: scale(0);
+                font-style: normal;
+                white-space: nowrap;
+                $color: $secondary;
+                transition: all .4s ease;
+                transform: scale(1);
+
+                span {
+                    display: inline-block;
+                    width: 0;
+                    transform: scale(0);
+                }
             }
 
-            &.fade-in {
-                opacity: 1;
+            &.fade-in.appear {
+                transform: translateX(0);
+                em {
+                    animation: intro-detail-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
+                    span {
+                        animation: intro-detail-brakets-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
+                    }
+                }
             }
         }
+
     }
 
     &__nav {
