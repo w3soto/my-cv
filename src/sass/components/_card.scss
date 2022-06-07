@@ -78,11 +78,11 @@
     }
 
     &:hover &__side--front {
-        transform: rotateY(180deg) translateY(-.8rem);
+        transform: rotateY(180deg);
         @include box-shadow();
     }
     &:hover &__side--back {
-        transform: rotateY(0deg) translateY(-.8rem);
+        transform: rotateY(0deg);
         @include box-shadow();
     }
 
