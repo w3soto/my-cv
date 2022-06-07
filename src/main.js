@@ -8,19 +8,19 @@ const nav = document.querySelector(".navigation");
 const navBtns = document.querySelectorAll(".navigation__button, .navigation__link");
 navBtns.forEach(btn => {
   btn.addEventListener("click", () => {
-      nav.classList.toggle("active");
+      nav.classList.toggle("navigation--active");
   });
 });
 
-document.addEventListener("scroll", () => {
-    const el =  window;
-    if (el.scrollY > 0.05 * el.innerHeight) {
-        nav.classList.add("navigation--active");
-    }
-    else {
-        nav.classList.remove("navigation--active");
-    }
-}, {passive: true});
+// document.addEventListener("scroll", () => {
+//     const el =  window;
+//     if (el.scrollY > 0.05 * el.innerHeight) {
+//         nav.classList.add("navigation--active");
+//     }
+//     else {
+//         nav.classList.remove("navigation--active");
+//     }
+// }, {passive: true});
 
 // FADE IN
 const fadeInObserver = new IntersectionObserver((entries, observer) => {

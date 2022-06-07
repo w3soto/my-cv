@@ -76,16 +76,16 @@
     }
 
     // active
-    &.active &__icon {
+    &--active &__icon {
         background: none;
         &:before {
-            transform: rotate(135deg) translateY(0);
+            transform: rotate(135deg) translateY(0) !important;
         }
         &:after {
-            transform: rotate(-135deg) translateY(0);
+            transform: rotate(-135deg) translateY(0) !important;;
         }
     }
-    &.active &__background {
+    &--active &__background {
         width: 200vmax * 1.42;
         height: 200vmax * 1.42;
         top: calc(-200vmax * 0.71 + 2.4rem);
@@ -93,7 +93,7 @@
         visibility: visible;
         opacity: 1;
     }
-    &.active &__nav {
+    &--active &__nav {
         opacity: 1;
         width: 100vw;
         height: 100vh;
