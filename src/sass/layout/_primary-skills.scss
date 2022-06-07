@@ -15,4 +15,8 @@
     @media (min-width: $bp-small) {
         flex-direction: row;
     }
+
+    @media (min-width: $bp-medium) {
+        gap: 8rem;
+    }
 }

@@ -19,6 +19,7 @@
         background-color: $background-light;
         box-shadow: 0 1.6rem 1.6rem 0 rgba(0 ,0, 0, .4);
         cursor: pointer;
+        transition: all .4s ease;
     }
 
     &__icon {
@@ -71,33 +72,31 @@
         z-index: 9997;
         background-image: radial-gradient(rgba($background-dark, 1), rgba($background-light, .6));
         visibility: hidden;
-        transition: all .4s ease-in-out;
+        transition: all .4s ease;
     }
 
     // active
-    &.active {
-        .navigation__icon {
-            background: none;
-            &:before {
-                transform: rotate(135deg) translateY(0);
-            }
-            &:after {
-                transform: rotate(-135deg) translateY(0);
-            }
+    &.active &__icon {
+        background: none;
+        &:before {
+            transform: rotate(135deg) translateY(0);
         }
-        .navigation__background {
-            width: 200vmax * 1.42;
-            height: 200vmax * 1.42;
-            top: calc(-200vmax * 0.71 + 2.4rem);
-            right: calc(-200vmax * 0.71 + 2.4rem);
-            visibility: visible;
-            opacity: 1;
+        &:after {
+            transform: rotate(-135deg) translateY(0);
         }
-        .navigation__nav {
-            opacity: 1;
-            width: 100vw;
-            height: 100vh;
-        }
+    }
+    &.active &__background {
+        width: 200vmax * 1.42;
+        height: 200vmax * 1.42;
+        top: calc(-200vmax * 0.71 + 2.4rem);
+        right: calc(-200vmax * 0.71 + 2.4rem);
+        visibility: visible;
+        opacity: 1;
+    }
+    &.active &__nav {
+        opacity: 1;
+        width: 100vw;
+        height: 100vh;
     }
 
     &__nav {
