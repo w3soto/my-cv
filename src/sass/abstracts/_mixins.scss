@@ -1,0 +1,13 @@
+
+@mixin box-shadow() {
+    box-shadow: 0 1.6rem 1.6rem 0 rgba(0, 0, 0, .4);
+}
+
+@mixin text-shadow() {
+    text-shadow: 0 1.6rem 1.6rem rgba(0, 0, 0, .4);
+}
+
+
+@mixin fade-in() {
+
+}

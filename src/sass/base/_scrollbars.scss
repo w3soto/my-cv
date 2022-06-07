@@ -1,0 +1,44 @@
+
+
+$track-color: rgba(255, 255, 255, .1);
+$thumb-color: rgba(255, 255, 255, .25);
+
+// firefox
+* {
+    scrollbar-color: $thumb-color $track-color;
+}
+
+// chrome
+*::-webkit-scrollbar-track {
+    background-color: $track-color;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: $thumb-color;
+}
+
+
+$width: 6px; // FF width
+
+// firefox
+* {
+    scrollbar-width: $width;
+}
+
+// chrome
+*::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: calc($width/2);
+}

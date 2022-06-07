@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.tag {
+    padding: 0 1.6rem;
+    display: inline-block;
+    line-height: 3.2rem;
+    background-color: $background-dark;
+    font-weight: 900;
+    color: $text-muted-color;
+    transition: all .4s ease;
+}
+
+.tag-list {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    li {
+        margin: 0 !important;
+    }
+}

@@ -1,0 +1,27 @@
+@use "sass:color";
+
+$background: #17161D;
+$background-light: color.mix(#fff, $background, 8%);
+$background-dark: color.mix(#000, $background, 16%);
+
+$text-color: #fff;
+$text-muted-color: color.mix(#fff, $background, 24%);
+
+$primary: #FFC107;
+$secondary: #1F7F84;
+
+// font sizes
+$fs-body: 1.6rem;
+$fs-h1: 9.6rem;
+$fs-h2: 7.2rem;
+$fs-h3: 5.6rem;
+$fs-h4: 4.8rem;
+
+//
+$gap: 4rem;
+$skew: 3deg;
+
+// breakpoints
+$bp-small: 40rem;
+$bp-medium: 64rem;
+

@@ -1,0 +1,170 @@
+@use "../abstracts" as *;
+@use "sass:math";
+
+.navigation {
+
+    @media print {
+        display: none;
+    }
+
+    &__button {
+        width: 5.6rem;
+        height: 5.6rem;
+        border: none;
+        border-radius: 50%;
+        position: fixed;
+        top: 2.4rem;
+        right: 2.4rem;
+        z-index: 9999;
+        background-color: $background-light;
+        box-shadow: 0 1.6rem 1.6rem 0 rgba(0 ,0, 0, .4);
+        cursor: pointer;
+    }
+
+    &__icon {
+        &,
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            height: 2px;
+            background-color: $text-color;
+            transition: all .2s ease-out;
+            width: 1.6rem;
+        }
+        & {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:before,
+        &:after {
+            content: "";
+            left: 0;
+            top: 0;
+        }
+        &:before {
+            transform: translateY(-.5rem);
+        }
+        &:after {
+            transform: translateY(.5rem);
+        }
+
+    }
+
+    &__button:hover &__icon {
+        &:before {
+            transform: translateY(-.6rem);
+        }
+        &:after {
+            transform: translateY(.6rem);
+        }
+    }
+
+    &__background {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        position: fixed;
+        top: 2.4rem;
+        right: 2.4rem;
+        z-index: 9997;
+        background-image: radial-gradient(rgba($background-dark, 1), rgba($background-light, .6));
+        visibility: hidden;
+        transition: all .4s ease-in-out;
+    }
+
+    // active
+    &.active {
+        .navigation__icon {
+            background: none;
+            &:before {
+                transform: rotate(135deg) translateY(0);
+            }
+            &:after {
+                transform: rotate(-135deg) translateY(0);
+            }
+        }
+        .navigation__background {
+            width: 200vmax * 1.42;
+            height: 200vmax * 1.42;
+            top: calc(-200vmax * 0.71 + 2.4rem);
+            right: calc(-200vmax * 0.71 + 2.4rem);
+            visibility: visible;
+            opacity: 1;
+        }
+        .navigation__nav {
+            opacity: 1;
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        z-index: 9998;
+        overflow: hidden;
+        transition: opacity .4s ease-out .4s;
+    }
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: 0;
+
+        transform: translate(-50%, -50%);
+        transition: all .4s ease-out;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    &__item {
+        text-align: center;
+        margin: 0 !important;
+        padding: 0;
+    }
+
+    &__link {
+
+        &,
+        &:link,
+        &:visited {
+            color: $text-color;
+            background-color: $secondary;
+            text-decoration: none;
+            font-size: 2.4rem;
+            font-weight: 900;
+            display: block;
+            padding: 1rem 2rem;
+            white-space: nowrap;
+            text-transform: uppercase;
+
+            transform: skewX(-2*$skew);
+
+            transition: all .4s ease-out;
+
+            span {
+                display: inline-block;
+                transform: skewX(2*$skew);
+            }
+        }
+
+        &:hover,
+        &:active {
+            background-color: $primary;
+            color: $background-light;
+            transform: translateY(-.4rem) skewX(-2*$skew) scale(1.05);
+            @include box-shadow();
+        }
+    }
+
+}

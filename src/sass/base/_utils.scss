@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+
+.bg {
+    background-color: $background   ;
+}
+
+.bg--dark {
+    background-color: $background-dark;
+}
+
+.bg--light {
+    background-color: $background-light;
+}
+
+.bg--primary {
+    background-color: $primary !important;
+}
+
+.bg--secondary {
+    background-color: $secondary !important;
+}
+
+.skew {
+    transform: skewY(-$skew);
+    > * {
+        transform: skewY($skew);
+    }
+}
+
+.bg--last {
+    box-shadow: 0 10rem 10rem 10rem $background-dark;
+}

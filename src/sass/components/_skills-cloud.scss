@@ -1,0 +1,86 @@
+@use "sass:math";
+@use "../abstracts" as *;
+
+
+.skills-cloud {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 80rem;
+
+    backface-visibility: hidden;
+
+    @media (hover: hover) {
+        &:hover span {
+            opacity: .1 !important;
+            color: $text-color !important;
+        }
+    }
+
+    span {
+        backface-visibility: hidden;
+
+        display: inline-block;
+        position: relative;
+        cursor: default;
+        font-weight: 800;
+        line-height: 1em;
+        letter-spacing: -.05em;
+        top: 0;
+        margin: -.05em;
+        padding: .1em .2em;
+
+        transition: all .4s ease;
+        transform-origin: center center;
+
+        &:nth-child(2n-1) {
+            transform: translateY(-.4rem);
+        }
+
+        &:nth-child(2n-3) {
+            transform: translateY(.4rem);
+        }
+
+        &:nth-child(2n-7) {
+            transform: translateY(-.8rem);
+        }
+
+        &:nth-child(2n-11) {
+            transform: translateY(.8rem);
+        }
+
+        //transform: skewY(-$skew);
+        color: $secondary;
+
+        @media (hover: hover) {
+            &.fade-in {
+                opacity: 0;
+                &.appear {
+                    opacity: 1;
+                }
+            }
+            &:hover {
+                color: $text-color;
+                background-color: $secondary !important;
+                opacity: 1 !important;
+            }
+        }
+
+    }
+
+    @for $i from 1 through 5 {
+        .skill-#{$i} {
+            font-size: 2rem + $i * .4;
+            &:hover {
+                transform: scale(1 + 0.025 + (1.25 - $i * .2)) skewY(-$skew);
+            }
+            @media (min-width: $bp-medium) {
+                font-size: 2.8rem + $i * .4;
+                &:hover {
+                    transform: scale(1 + 0.025 + (.5 - $i * .1)) skewY(-$skew);
+                }
+            }
+        }
+    }
+
+}

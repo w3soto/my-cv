@@ -1,0 +1,10 @@
+
+
+.fade-in  {
+    transition: all .4s ease;
+    opacity: 0;
+    &.appear {
+        opacity: 1;
+    }
+}
+

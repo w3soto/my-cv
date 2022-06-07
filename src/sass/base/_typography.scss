@@ -1,0 +1,104 @@
+@use "../abstracts" as *;
+
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $background;
+    color: $text-color;
+    line-height: 1.25em;
+    font-size: 1.6rem;
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    @media print {
+        background-color: #fff;
+        color: $text-muted-color;
+        @page {
+            size: 210mm 297mm;
+            margin-top: 10mm;
+            margin-bottom: 10mm;
+            margin-left: 10mm;
+            margin-right: 10mm;
+        }
+    }
+}
+
+p {
+    margin-bottom: 1em;
+    line-height: 1.25em;
+}
+
+ul {
+    list-style-type: square;
+    margin: 0 0 1em 2rem;
+    li {
+        line-height: 1.25em;
+        &:not(:last-child) {
+            margin-bottom: .5em;
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1em;
+    line-height: 1em;
+    letter-spacing: -.05em;
+    font-weight: 900;
+}
+
+// name
+h1 {
+    font-size: 6.4rem;
+    @media (min-width: $bp-small) {
+        font-size: 7.2rem;
+    }
+}
+
+// slogan
+h2 {
+    font-size: 4.8rem;
+    @media (min-width: $bp-small) {
+        font-size: 5.6rem;
+    }
+}
+
+// section title
+h3 {
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $text-muted-color;
+    margin: 1em 0;
+
+    @media (min-width: $bp-medium) {
+        margin: 2em 0;
+    }
+}
+
+// card title
+// primary skills
+h4 {
+    font-size: 3.2rem;
+}
+
+// card subtitle
+h5 {
+    font-size: 2.4rem;
+}
+
+a {
+    color: $secondary;
+    text-decoration: none;
+    transition: all .4s ease;
+    display: inline-block;
+}
+
+section {
+    padding: 4rem 0;
+    @media (min-width: $bp-medium) {
+        padding: 8rem 0;
+    }
+}

@@ -1,0 +1,289 @@
+@use "../abstracts" as *;
+@use "sass:color";
+@use "sass:math";
+
+
+//#intro {
+//    background-image:
+//            linear-gradient(-177deg, rgba($background-dark, .48), $background), url('../img/bg2.jpg');
+//    background-size: cover;
+//    background-position: top center;
+//}
+
+.intro {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.2rem 0;
+    margin-bottom: 8rem;
+
+    @media (min-width: $bp-small) {
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    @media print {
+        justify-content: flex-start;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        gap: 3.2rem;
+        overflow: hidden;
+
+        @media (min-width: $bp-small) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media print {
+            grid-template-columns: auto 1fr;
+        }
+    }
+
+    &__avatar {
+        justify-self: center;
+        align-self: center;
+        border: solid $background-dark 1.6rem;
+        border-radius: 50%;
+        background-color: $background-light;
+        padding: 1.6rem;
+        width: min(45vw, 24rem);
+        height: min(45vw, 24rem);
+        object-fit: cover;
+
+        //@include box-shadow();
+
+        transition: all .8s ease .4s;
+
+        @media (min-width: $bp-small) {
+            justify-self: self-end;
+        }
+
+        @media print {
+            justify-self: flex-start;
+            align-self: flex-start;
+            width: 11rem;
+            height: 11rem;
+            border: none;
+            padding: .8rem;
+        }
+    }
+
+    &__container {
+        justify-self: center;
+        align-self: center;
+        cursor: default;
+
+        @media (min-width: $bp-small) {
+            justify-self: self-start;
+        }
+    }
+
+    &__name {
+        text-align: center;
+        white-space: nowrap;
+        margin-bottom: .25em;
+
+        @media (min-width: $bp-small) {
+            text-align: left;
+        }
+
+        @media print {
+            font-size: 4rem;
+            text-align: left;
+        }
+
+        span {
+            display: block;
+            transition: all .8s ease .4s;
+        }
+    }
+
+    &__contacts {
+        list-style: none;
+        margin: 0;
+        transition: all .8s ease .4s;
+        li {
+            text-align: center;
+            @media (min-width: $bp-small) {
+                text-align: left;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                @media print {
+                    display: none;
+                }
+            }
+            svg {
+                height: 1em;
+                width: 1em;
+                vertical-align: text-top;
+                line-height: inherit;
+                margin-right: .25em;
+                fill: white;
+                @media print {
+                    fill: $text-muted-color;
+                }
+            }
+            a {
+                color: currentColor;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__slogan {
+        text-align: center;
+        grid-column: 1 / -1;
+        font-weight: 800;
+        color: $secondary;
+        transform: skewY(-$skew);
+        margin-bottom: 0;
+        cursor: default;
+
+        @media (min-width: $bp-small) {
+            margin-top: 3.2rem;
+            margin-bottom: 3.2rem;
+        }
+
+        @media print {
+            display: none;
+        }
+
+        > span {
+            display: block;
+            &.fade-in.appear {
+                transform: translateX(0);
+            }
+            &:nth-child(1) {
+                transform: translateX(-50%);
+                transition: all .4s ease .8s;
+            }
+            &:nth-child(2) {
+                transform: translateX(50%);
+                transition: all .4s ease 1.2s;
+            }
+        }
+        em {
+            display: inline-block;
+            font-style: normal;
+            white-space: nowrap;
+            $color: $secondary;
+
+            transition: all .4s ease;
+            transform: scale(1);
+
+            animation: intro-detail-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
+
+            span {
+                display: inline-block;
+                width: 0;
+                animation: intro-detail-brakets-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
+                transform: scale(0);
+            }
+
+            &.fade-in {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__nav {
+        grid-column: 1 / -1;
+        display: flex;
+        align-self: center;
+        justify-self: center;
+
+        @media print {
+            display: none;
+        }
+
+        &.fade-in {
+            transition: all .4s ease 4s;
+        }
+    }
+
+    &__nav-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 6.4rem;
+        height: 6.4rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        transition: all .4s ease;
+        transform-origin: center;
+        animation: intro-nav-button-anim 2s ease infinite;
+    }
+
+    &__nav-icon {
+        display: inline-block;
+        width: 3.2rem;
+        height: 3.2rem;
+        transform: rotate(45deg) translateY(math.pow(2, 2) * -1%) translateX(math.pow(2, 2) * -1%);
+        transform-origin: center;
+        border-right: solid 1rem $background-light;
+        border-bottom: solid 1rem $background-light;
+    }
+
+}
+
+@keyframes intro-detail-anim {
+    0% {
+        color: $secondary;
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.15);
+        @include text-shadow();
+    }
+    100% {
+        color: $primary;
+        transform: scale(1);
+    }
+}
+
+@keyframes intro-detail-brakets-anim {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    75% {
+        opacity: 1;
+        width: 1em;
+        transform: scale(1.3);
+        @include text-shadow();
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+        width: 1em;
+    }
+}
+
+
+@keyframes intro-nav-button-anim {
+    0% {
+        opacity: 0;
+        transform: translateY(-1.6rem);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(1.6rem);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(1.6rem);
+    }
+}
+

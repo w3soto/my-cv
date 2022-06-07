@@ -1,0 +1,141 @@
+@use "../abstracts" as *;
+
+.print-button,
+.download-button {
+
+    width: 5.6rem;
+    height: 5.6rem;
+    border: none;
+    border-radius: 50%;
+    background-color: $background-light;
+    box-shadow: 0 1.6rem 1.6rem 0 rgba(0, 0, 0, .4);
+    position: fixed;
+    z-index: 999;
+    cursor: pointer;
+
+    @media print {
+        display: none;
+    }
+
+}
+
+.print-button {
+
+    right: 2.4rem;
+    top: 16.8rem;
+
+    &__icon {
+
+        &,
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            transition: all .2s ease-out;
+        }
+
+        & {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $text-color;
+            width: 1.6rem;
+            height: .6rem;
+        }
+
+        &:before,
+        &:after {
+            content: " ";
+        }
+
+        &:before {
+            width: 1.2rem;
+            height: .8rem;
+            border: solid 2px $text-color;
+            top: -.6rem;
+            left: .2rem;
+        }
+
+        &:after {
+            width: 1.2rem;
+            height: .2rem;
+            background-color: $text-color;
+            top: .7rem;
+            left: .2rem;
+        }
+
+    }
+
+    &:hover &__icon {
+        &:before {
+            top: -.4rem;
+        }
+        &:after {
+            height: .4rem;
+        }
+    }
+
+}
+
+.download-button {
+
+    right: 2.4rem;
+    top: 9.6rem;
+
+    &__icon {
+
+        &,
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            transition: all .2s ease-out;
+        }
+
+        & {
+            width: 1.6rem;
+            height: .4rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            border-bottom: solid 2px $text-color;
+            border-left: solid 2px $text-color;
+            border-right: solid 2px $text-color;
+        }
+
+        &:before,
+        &:after {
+            content: " ";
+        }
+
+        &:before {
+            width: .2rem;
+            height: 1.0rem;
+            background-color:  $text-color;
+            top: -1.4rem;
+            left: .5rem;
+        }
+
+        &:after {
+            width: .6rem;
+            height: .6rem;
+            transform-origin: bottom right;
+            transform: rotate(45deg);
+            border-bottom: solid 2px $text-color;
+            border-right: solid 2px $text-color;
+            top: -.8rem;
+            left: 0;
+        }
+
+    }
+
+    &:hover &__icon {
+        &:before {
+            top: -1.2rem;
+        }
+        &:after {
+            top: -.6rem
+        }
+    }
+
+}
