@@ -35,7 +35,7 @@
                 content: " ";
                 position: absolute;
                 bottom: 0;
-                left: 50%;
+                left: 66%;
                 width: 100%;
                 height: 100%;
                 transform: skewX(-2*$skew);
@@ -43,12 +43,33 @@
             }
         }
 
-        //&--no-image {
-        //    &:after {
-        //        background-color: $background-light  !important;
-        //    }
-        //}
+    }
 
+    &__no-image {
+        display: block;
+        width: .2rem;
+        height: 1.6rem;
+        background-color: $text-color;
+        transform: skewX(-2*$skew);
+
+        &:before,
+        &:after {
+            display: block;
+            content: " ";
+            position: absolute;
+            top: 0;
+            width: .2rem;
+            height: 1.6rem;
+            background-color: $text-color;
+        }
+
+        &:before {
+            left: -.6rem;
+        }
+
+        &:after {
+            right: -.6rem;
+        }
     }
 
     &:hover &__side--single {
