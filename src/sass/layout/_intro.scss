@@ -17,6 +17,7 @@
     align-items: center;
     padding: 3.2rem 0;
     margin-bottom: 8rem;
+    overflow: hidden;
 
     @media (min-width: $bp-small) {
         min-height: 100vh;
@@ -35,7 +36,6 @@
         grid-template-columns: 1fr;
         grid-auto-rows: min-content;
         gap: 3.2rem;
-        overflow: hidden;
 
         @media (min-width: $bp-small) {
             grid-template-columns: 1fr 1fr;
