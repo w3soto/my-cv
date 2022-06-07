@@ -49,21 +49,19 @@
             transform: translateY(.8rem);
         }
 
-        //transform: skewY(-$skew);
         color: $secondary;
 
-        @media (hover: hover) {
-            &.fade-in {
-                opacity: 0;
-                &.appear {
-                    opacity: 1;
-                }
+        &.fade-in {
+            opacity: 0;
+            &.appear {
+                opacity: 1;
             }
-            &:hover {
-                color: $text-color;
-                background-color: $secondary !important;
-                opacity: 1 !important;
-            }
+        }
+        &:hover {
+            color: $text-color;
+            background-color: $secondary !important;
+            opacity: 1 !important;
+            z-index: 1;
         }
 
     }
