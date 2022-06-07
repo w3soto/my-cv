@@ -21,9 +21,9 @@
 }
 
 .skew {
-    transform: skewY(-$skew);
+    transform: skewY(-$skew) translateZ(0);
     > * {
-        transform: skewY($skew);
+        transform: skewY($skew) translateZ(0);
     }
 }
 
