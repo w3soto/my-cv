@@ -8,8 +8,6 @@
     margin: 0 auto;
     max-width: 80rem;
 
-    backface-visibility: hidden;
-
     @media (hover: hover) {
         &:hover span {
             opacity: .1 !important;
@@ -18,8 +16,6 @@
     }
 
     span {
-        backface-visibility: hidden;
-
         display: inline-block;
         position: relative;
         cursor: default;
