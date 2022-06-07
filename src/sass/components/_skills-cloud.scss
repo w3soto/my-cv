@@ -71,13 +71,10 @@
         .skill-#{$i} {
             font-size: 2rem + $i * .4;
             &:hover {
-                transform: scale(1 + 0.025 + (1.25 - $i * .2)) skewY(-$skew);
+                transform: scale(1 + 0.025 + (.5 - $i * .1)) skewY(-$skew);
             }
             @media (min-width: $bp-medium) {
                 font-size: 2.8rem + $i * .4;
-                &:hover {
-                    transform: scale(1 + 0.025 + (.5 - $i * .1)) skewY(-$skew);
-                }
             }
         }
     }
