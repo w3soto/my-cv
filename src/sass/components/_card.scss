@@ -9,22 +9,17 @@
         padding: 2.4rem;
         overflow: hidden;
 
+        transition: all .8s ease;
+        background-color: $background-light;
         backface-visibility: hidden;
         width: 100%;
         height: 100%;
 
-        &--single {
-            transition: all .4s ease;
-            background-color: $background-light;
-        }
-
         &--front {
-            transition: all .8s ease;
-            background-color: $background-light;
         }
 
         &--back {
-            background-color: $background-dark;
+            background-color: $background-light;
             transition: all .8s ease;
             transform: rotateY(-180deg);
             position: absolute;
@@ -44,14 +39,20 @@
                 width: 100%;
                 height: 100%;
                 transform: skewX(-2*$skew);
-                background-color: rgba($background, .24);
+                background-color: rgba(0, 0, 0, .24);
             }
         }
+
+        //&--no-image {
+        //    &:after {
+        //        background-color: $background-light  !important;
+        //    }
+        //}
 
     }
 
     &:hover &__side--single {
-        transform: translateY(-.8rem);
+        transform: translateY(-.8rem) scale(1.025);
         @include box-shadow();
     }
 
