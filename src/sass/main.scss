@@ -3,16 +3,3 @@
 @use "base";
 @use "layout";
 @use "components";
-
-
-.text-primary {
-    color: $primary;
-}
-
-.text-secondary {
-    color: $secondary;
-}
-
-.text-muted {
-    color: $text-muted-color;
-}

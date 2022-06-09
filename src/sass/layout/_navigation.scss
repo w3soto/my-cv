@@ -17,15 +17,15 @@
         right: 2.4rem;
         z-index: 9999;
         background-color: $background-light;
-        box-shadow: 0 1.6rem 1.6rem 0 rgba(0 ,0, 0, .4);
+        box-shadow: 0 1.6rem 1.6rem 0 rgba(0, 0, 0, 40%);
         cursor: pointer;
-        transition: all .4s ease;
+        transition: all 0.4s ease;
     }
 
     &__icon {
         &,
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             position: absolute;
             display: block;
             height: 2px;
@@ -33,31 +33,36 @@
             transition: all .2s ease-out;
             width: 1.6rem;
         }
+
         & {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        &:before,
-        &:after {
+
+        &::before,
+        &::after {
             content: "";
             left: 0;
             top: 0;
         }
-        &:before {
+
+        &::before {
             transform: translateY(-.5rem);
         }
-        &:after {
+
+        &::after {
             transform: translateY(.5rem);
         }
 
     }
 
     &__button:hover &__icon {
-        &:before {
+        &::before {
             transform: translateY(-.6rem);
         }
-        &:after {
+
+        &::after {
             transform: translateY(.6rem);
         }
     }
@@ -78,13 +83,16 @@
     // active
     &--active &__icon {
         background: none;
-        &:before {
+
+        &::before {
             transform: rotate(135deg) translateY(0) !important;
         }
-        &:after {
-            transform: rotate(-135deg) translateY(0) !important;;
+
+        &::after {
+            transform: rotate(-135deg) translateY(0) !important;
         }
     }
+
     &--active &__background {
         width: 200vmax * 1.42;
         height: 200vmax * 1.42;
@@ -93,6 +101,7 @@
         visibility: visible;
         opacity: 1;
     }
+
     &--active &__nav {
         opacity: 1;
         width: 100vw;
@@ -147,13 +156,13 @@
             white-space: nowrap;
             text-transform: uppercase;
 
-            transform: skewX(-2*$skew);
+            transform: skewX(-2 * $skew);
 
             transition: all .4s ease-out;
 
             span {
                 display: inline-block;
-                transform: skewX(2*$skew);
+                transform: skewX(2 * $skew);
             }
         }
 
@@ -161,7 +170,7 @@
         &:active {
             background-color: $primary;
             color: $background-light;
-            transform: translateY(-.4rem) skewX(-2*$skew) scale(1.05);
+            transform: translateY(-.4rem) skewX(-2 * $skew) scale(1.05);
             @include box-shadow();
         }
     }

@@ -24,13 +24,6 @@
         margin: 0;
     }
 
-    @media print {
-        justify-content: flex-start;
-        min-height: auto;
-        margin: 0;
-        padding: 0;
-    }
-
     &__wrapper {
         display: grid;
         grid-template-columns: 1fr;
@@ -41,9 +34,6 @@
             grid-template-columns: 1fr 1fr;
         }
 
-        @media print {
-            grid-template-columns: auto 1fr;
-        }
     }
 
     &__avatar {
@@ -65,14 +55,6 @@
             justify-self: self-end;
         }
 
-        @media print {
-            justify-self: flex-start;
-            align-self: flex-start;
-            width: 11rem;
-            height: 11rem;
-            border: none;
-            padding: .8rem;
-        }
     }
 
     &__container {
@@ -114,12 +96,6 @@
             @media (min-width: $bp-small) {
                 text-align: left;
             }
-            &:nth-child(2),
-            &:nth-child(3) {
-                @media print {
-                    display: none;
-                }
-            }
             svg {
                 height: 1em;
                 width: 1em;
@@ -127,9 +103,6 @@
                 line-height: inherit;
                 margin-right: .25em;
                 fill: white;
-                @media print {
-                    fill: $text-muted-color;
-                }
             }
             a {
                 color: currentColor;
@@ -153,10 +126,6 @@
         @media (min-width: $bp-small) {
             margin-top: 3.2rem;
             margin-bottom: 3.2rem;
-        }
-
-        @media print {
-            display: none;
         }
 
         > span {
@@ -190,9 +159,9 @@
             &.fade-in.appear {
                 transform: translateX(0);
                 em {
-                    animation: intro-detail-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
+                    animation: intro-detail-anim .4s ease-out 2.4s forwards;
                     span {
-                        animation: intro-detail-brakets-anim .4s cubic-bezier(.79,.06,.32,1.44) 2.4s forwards;
+                        animation: intro-detail-brakets-anim .4s ease-out 2.4s forwards;
                     }
                 }
             }
@@ -205,10 +174,6 @@
         display: flex;
         align-self: center;
         justify-self: center;
-
-        @media print {
-            display: none;
-        }
 
         &.fade-in {
             transition: all .4s ease 4s;
@@ -246,7 +211,7 @@
         color: $secondary;
         transform: scale(1);
     }
-    75% {
+    33% {
         transform: scale(1.15);
         @include text-shadow();
     }
@@ -261,7 +226,7 @@
         opacity: 0;
         transform: scale(0);
     }
-    75% {
+    33% {
         opacity: 1;
         width: 1em;
         transform: scale(1.3);

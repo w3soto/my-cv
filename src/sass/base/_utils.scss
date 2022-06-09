@@ -28,5 +28,18 @@
 }
 
 .bg--last {
-    box-shadow: 0 10rem 0rem 10rem $background-dark;
+    box-shadow: 0 10rem 0 10rem $background-dark;
+}
+
+
+.text-primary {
+    color: $primary;
+}
+
+.text-secondary {
+    color: $secondary;
+}
+
+.text-muted {
+    color: $text-muted-color;
 }
