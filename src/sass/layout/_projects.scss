@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    .card__image {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media (min-width: $bp-small) {
+        grid-template-columns: 1fr 1fr;
+        max-width: 640px;
+    }
+
+    @media (min-width: $bp-medium) {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6.4rem;
+        max-width: 1200px;
+    }
+
+}
