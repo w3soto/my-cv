@@ -161,7 +161,7 @@
                 em {
                     animation: intro-detail-anim .4s ease-out 2.4s forwards;
                     span {
-                        animation: intro-detail-brakets-anim .4s ease-out 2.4s forwards;
+                        animation: intro-detail-brackets-anim .4s ease-out 2.4s forwards;
                     }
                 }
             }
@@ -198,7 +198,7 @@
         display: inline-block;
         width: 3.2rem;
         height: 3.2rem;
-        transform: rotate(45deg) translateY(math.pow(2, 2) * -1%) translateX(math.pow(2, 2) * -1%);
+        transform: rotate(45deg) translateY(math.pow(2, 2) * - 1%) translateX(math.pow(2, 2) * -1%);
         transform-origin: center;
         border-right: solid 1rem $background-light;
         border-bottom: solid 1rem $background-light;
@@ -221,7 +221,7 @@
     }
 }
 
-@keyframes intro-detail-brakets-anim {
+@keyframes intro-detail-brackets-anim {
     0% {
         opacity: 0;
         transform: scale(0);
