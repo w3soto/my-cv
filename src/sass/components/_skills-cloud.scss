@@ -9,13 +9,13 @@
     max-width: 80rem;
 
     @media (hover: hover) {
-        &:hover span {
+        &:hover &__item {
             opacity: .1 !important;
             color: $text-color !important;
         }
     }
 
-    span {
+    &__item {
         display: inline-block;
         position: relative;
         cursor: default;
@@ -49,22 +49,24 @@
 
         &.fade-in {
             opacity: 0;
+
             &.appear {
                 opacity: 1;
             }
         }
-        &:hover {
-            color: $text-color;
-            background-color: $secondary !important;
-            opacity: 1 !important;
-            z-index: 1;
-            @include box-shadow();
-        }
 
     }
 
+    &:hover &__item:hover {
+        color: $text-color !important;
+        background-color: $secondary !important;
+        opacity: 1 !important;
+        z-index: 1;
+        @include box-shadow();
+    }
+
     @for $i from 1 through 5 {
-        .skill-#{$i} {
+        &__item--#{$i} {
             font-size: 2rem + $i * .4;
             &:hover {
                 transform: scale(1 + 0.025 + (.5 - $i * .1)) skewY(-$skew);

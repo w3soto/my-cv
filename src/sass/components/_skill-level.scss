@@ -63,16 +63,11 @@
         transition: all .8s ease;
     }
 
-    &__progress--75.fade-in.appear {
-        width: 75%
-    }
-
-    &__progress--85.fade-in.appear {
-        width: 85%
-    }
-
-    &__progress--90.fade-in.appear {
-        width: 90%
+    @for $val from 70 through 100 {
+        $progress: 1% * $val;
+        &__progress--#{$val}.fade-in.appear {
+            width: $progress;
+        }
     }
 
     &__value {
