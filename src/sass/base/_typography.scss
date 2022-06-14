@@ -1,17 +1,15 @@
 @use "../abstracts" as *;
 
-
 html {
-    font-size: 10px;
     scroll-behavior: smooth;
 }
 
 body {
     background-color: $background;
     color: $text-color;
-    line-height: 1.25em;
-    font-size: 1.6rem;
     font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5em;
 
     @media print {
         background-color: #fff;
@@ -28,18 +26,11 @@ body {
 
 p {
     margin-bottom: 1em;
-    line-height: 1.25em;
 }
 
 ul {
     list-style-type: square;
-    margin: 0 0 1em 2rem;
-    li {
-        line-height: 1.25em;
-        &:not(:last-child) {
-            margin-bottom: .5em;
-        }
-    }
+    margin: 0 0 1em 1.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,7 +70,7 @@ h3 {
 }
 
 // card title
-// primary skills
+// primary skills title
 h4 {
     font-size: 3.2rem;
 }
@@ -98,6 +89,10 @@ a {
 
 section {
     padding: 4rem 0;
+    transform: skewY(-$skew) translateZ(0);
+    > * {
+        transform: skewY($skew) translateZ(0);
+    }
     @media (min-width: $bp-medium) {
         padding: 8rem 0;
     }

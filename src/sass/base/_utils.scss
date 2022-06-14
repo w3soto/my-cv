@@ -20,13 +20,6 @@
     background-color: $secondary !important;
 }
 
-.skew {
-    transform: skewY(-$skew) translateZ(0);
-    > * {
-        transform: skewY($skew) translateZ(0);
-    }
-}
-
 .bg--last {
     box-shadow: 0 10rem 0 10rem $background-dark;
 }
