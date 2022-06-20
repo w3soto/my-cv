@@ -32,7 +32,7 @@ const fadeInObserver = new IntersectionObserver((entries, observer) => {
     });
 }, {
     threshold: 0,
-    rootMargin: "0px 0px -128px 0px"
+    rootMargin: "0px 0px -64px 0px"
 });
 
 document.querySelectorAll(".fade-in")

@@ -43,8 +43,10 @@
         border-radius: 50%;
         //background-color: $background-light;
         //padding: 1.6rem;
-        width: min(45vw, 24rem);
-        height: min(45vw, 24rem);
+        width: 45vw;
+        max-width: 24rem;
+        height: 45vw;
+        max-height: 24rem;
         object-fit: cover;
 
         //@include box-shadow();

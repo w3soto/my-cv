@@ -15,8 +15,8 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: .8rem;
+    //gap: .8rem;
     li {
-        margin: 0 !important;
+        margin: 0 .8rem .8rem 0 !important;
     }
 }
