@@ -17,8 +17,12 @@
     .card--education {
         padding: 2.4rem;
         transform: skewx(-2 * $skew);
-        > * {
+        .card__content {
             transform: skewx(2 * $skew);
+            margin: 0;
+            p {
+                margin: 1em 0 0;
+            }
         }
         &:hover {
             transform: scale(1.025) skewx(-2 * $skew) translateY(-.8rem) !important;

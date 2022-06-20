@@ -39,10 +39,10 @@
     &__avatar {
         justify-self: center;
         align-self: center;
-        border: solid $background-dark 1.6rem;
+        border: solid $background-light 1.6rem;
         border-radius: 50%;
-        background-color: $background-light;
-        padding: 1.6rem;
+        //background-color: $background-light;
+        //padding: 1.6rem;
         width: min(45vw, 24rem);
         height: min(45vw, 24rem);
         object-fit: cover;
