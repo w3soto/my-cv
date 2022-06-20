@@ -11,7 +11,9 @@ module.exports = (env) => ({
             filename: env.mode === "production" ? "[contenthash].css" : "main.css",
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: "./src/index.html",
+            inject: "body",
+            scriptLoading: "blocking"
         }),
         // copy everything from assets folder
         new CopyWebpackPlugin({
